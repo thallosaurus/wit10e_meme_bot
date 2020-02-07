@@ -1,7 +1,5 @@
-import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
-import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
@@ -9,7 +7,7 @@ public class MemeBotWIT10E extends TelegramLongPollingCommandBot {
 
 	@Override
     public void processNonCommandUpdate(Update update) {
-
+		
     }
 
     public String getBotUsername() {
@@ -26,8 +24,9 @@ public class MemeBotWIT10E extends TelegramLongPollingCommandBot {
     {
     	super();
     	
-    	register(new StartCommand("start", "start here"));
-    	register(new CatPics("cat", "send me cute cat pictures"));
+    	register(new StartCommand(Constants.START, "start here"));
+    	register(new CatPics(Constants.CAT, "send me cute cat pictures"));
+    	register(new HelpCommand(Constants.HELP, "help me"));
     	
     	registerDefaultAction((absSender, message) -> {
     		SendMessage commandUnknownMessage = new SendMessage();

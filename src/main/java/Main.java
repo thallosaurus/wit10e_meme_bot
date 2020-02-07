@@ -4,6 +4,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException;
 
 public class Main {
+	static String link = "https://cataas.com/cat";
     public static void main(String[] args)
     {
         ApiContextInitializer.init();
